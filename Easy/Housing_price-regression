@@ -5,20 +5,19 @@ import datetime
 from datetime import datetime
 from packaging import version
 import os
-
 from keras.datasets import boston_housing
 
 
 
-# Load and clean data
+# Load and normalise data
 (train_data, train_targets), (test_data, test_targets) =boston_housing.load_data()
-
 mean=train_data.mean(axis=0)
 train_data -=mean
 std=train_data.std(axis=0)
 train_data /=std
 
 """"
+# Attempt at caching data to speed up training
 train_data=train_data.cache()
 train_data=train_data.prefetch(tf.data.experimental.AUTOTUNE)
 test_data=test_data.cache()
@@ -78,6 +77,7 @@ average_mae_history=[
 ]
 #       End K-fold
 
+
 #       Smoothing
 def smooth_curve(points, factor=0.9):
     smoothed_points = []
@@ -89,6 +89,7 @@ def smooth_curve(points, factor=0.9):
             smoothed_points.append(point)
     return smoothed_points
 smooth_mae_history = smooth_curve(average_mae_history[10:])
+
 
 #       Plotting
 plt.plot(range(1, len(smooth_mae_history) + 1), smooth_mae_history)
