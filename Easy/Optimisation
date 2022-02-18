@@ -1,0 +1,25 @@
+Fashion
+
+Standard:   0.88
+L1 reg:     0.83
+L2 reg:     0.86   (epochs=20)
+L1+L2:      0.82
+Dropout:    0.88
+156 nodes:  0.87
+
+
+IMDB 
+
+Standard:   0.8799
+Dropout:    0.881
+
+
+Reuters
+
+Standard:   0.783
+Dropout:    0.789 (epochs=50)
+128 nodes:  0.800
+
+Digits
+
+Standard:   0.978
