@@ -16,6 +16,9 @@ train_data -=mean
 std=train_data.std(axis=0)
 train_data /=std
 
+test_data -= mean
+test_data /= std
+
 """"
 # Attempt at caching data to speed up training
 train_data=train_data.cache()
