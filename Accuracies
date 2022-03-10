@@ -4,5 +4,15 @@ Standard: 0.9916
 
 
 DD model:
+Try smaller layers next time
+
 Single layer:
-The hyperparameter search is complete. The optimal number of units in the first densely-connected layer is 176 and the optimal learning rate for the optimizer is 0.001.
+layer 1-176
+learning rate- 0.001
+
+Double layer:
+layer 1 - 96
+layer 2- 160
+learning rate- 0.01
+dropout- false
+
